@@ -1,0 +1,143 @@
+.welcome-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 5rem);
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.welcome-container {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Main Content */
+.welcome-main-content {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.welcome-main-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+.welcome-main-subtitle {
+  color: #a0aec0;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Options Grid */
+.welcome-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Option Card */
+.welcome-option-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgb(228, 157, 57, 0.4);
+  border-radius: 16px;
+  padding: 40px 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 220px;
+  justify-content: center;
+}
+
+.welcome-option-card:hover {
+  border: 2px solid rgb(228, 157, 57);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Option Icon */
+.welcome-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  color: #E49D39;
+}
+
+.welcome-option-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.welcome-option-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.welcome-option-description {
+  color: #a0aec0;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.welcome-arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  color: #8b5cf6;
+  font-size: 18px;
+}
+
+.welcome-option-card:hover .welcome-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-main-title {
+    font-size: 28px;
+  }
+
+  .welcome-main-subtitle {
+    font-size: 16px;
+  }
+
+  .welcome-options {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .welcome-option-card {
+    padding: 32px 24px;
+    min-height: 180px;
+  }
+
+  .welcome-option-title {
+    font-size: 18px;
+  }
+}

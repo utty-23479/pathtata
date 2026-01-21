@@ -3,9 +3,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import LogIn from "./components/LogIn/LogIn";
 import SignUp from "./components/SignUp/SignUp";
 import Profile from "./components/Profile/Profile";
-// import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-// <PrivateRoute children={<Profile />} />
-
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import SortingHat from "./pages/SortingHat/SortingHat";  // ← NUEVO
 
 function App() {
   return (
@@ -13,26 +12,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
-          <Route
-            path="/logIn"
-            element={<LogIn />}
-          />
-          <Route
-            path="/signUp"
-            element={<SignUp />}
-          />
-          <Route
-            path="/profile"
-            element={
-              <Profile />
-            }
-          />
-          {/* <Route className={"my-scope"}
-            path="/dashboard"
-            element={
-              <Dashboard/>
-            }
-          /> */}
+          <Route path="/logIn" element={<LogIn />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/profile" element={<PrivateRoute children={<Profile />} />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/sorting-hat" element={<SortingHat />} />  {/* ← NUEVO */}
           <Route path="*" element={<h1>Page not found 404 :(</h1>} />
         </Routes>
       </Router>
