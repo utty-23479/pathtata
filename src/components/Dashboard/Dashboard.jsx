@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { LearningTree } from './learning-tree';
 import { NodePanel } from './node-panel';
 import "../../index.css";
@@ -456,10 +456,33 @@ const learningTreeData = [
   }
 ];
 
+
+
 export default function Dashboard() {
+  // const [nodes, setNodes] = useState([]);
   const [selectedNode, setSelectedNode] = useState(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [nodes, setNodes] = useState(learningTreeData);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTree = async () => {
+      try {
+        // Usamos IDs fijos por ahora para probar (User 1, Path 1)
+        const response = await fetch('http://localhost:3001/api/paths/1/tree/1');
+        const data = await response.json();
+        setNodes(data);
+        setLoading(true);
+      } catch (error) {
+        console.error("Error cargando el árbol:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTree();
+  }, []);
+
+  if (loading) return <div className="text-white">Cargando mapa...</div>;
 
   const handleNodeSelect = (node) => {
     const currentNode = nodes.find(n => n.id === node.id) || node;
