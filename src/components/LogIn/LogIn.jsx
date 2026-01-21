@@ -32,7 +32,7 @@ const LogIn = () => {
             try {
                 setErrors({});
                 const { data } = await loginUser(loginData).unwrap();
-                if (data) navigate('/profile');
+                if (data) navigate('/sorting-hat');  // ← CAMBIO AQUÍ
             } catch (error) {
                 if (error?.status === 401) setErrors({ ...error, password: error.data.error });
                 else console.error("Unexpected signIn error:", error);

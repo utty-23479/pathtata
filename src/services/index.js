@@ -3,7 +3,7 @@ import { baseQueryHeaders } from "./headers";
 
 export const baseApi = createApi({
     reducerPath: 'baseApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/api' }),
     endpoints: () => ({})
 });
 

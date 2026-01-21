@@ -1,0 +1,287 @@
+.results-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 5rem);
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  gap: 48px;
+}
+
+/* Header */
+.results-header {
+  text-align: center;
+}
+
+.results-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+.results-subtitle {
+  color: #a0aec0;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Recommended Path Section - Combined Card */
+.recommended-path-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.recommended-path-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #E49D39;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.recommended-path-card {
+  width: 100%;
+  background: rgba(228, 157, 57, 0.08);
+  border: 3px solid rgba(228, 157, 57, 0.6);
+  border-radius: 20px;
+  padding: 48px 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  color: inherit;
+  animation: pulseGlow 2s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.recommended-path-card:hover {
+  border: 3px solid rgb(228, 157, 57);
+  background: rgba(228, 157, 57, 0.12);
+  transform: translateY(-4px);
+  animation: none;
+  box-shadow: 0 0 40px rgba(228, 157, 57, 0.6), 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Badge Info dentro del card */
+.recommended-badge-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid rgba(228, 157, 57, 0.4);
+  width: 100%;
+}
+
+.results-badge-icon {
+  width: 64px;
+  height: 64px;
+  color: #E49D39;
+}
+
+.results-badge-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.results-badge-description {
+  color: #a0aec0;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Path Info dentro del card */
+.recommended-path-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.recommended-path-text {
+  text-align: center;
+  max-width: 600px;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(228, 157, 57, 0.3), 0 0 20px rgba(228, 157, 57, 0.15);
+    border-color: rgba(228, 157, 57, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(228, 157, 57, 0.5), 0 0 60px rgba(228, 157, 57, 0.25);
+    border-color: rgba(228, 157, 57, 0.9);
+  }
+}
+
+/* Other Paths Section */
+.other-paths-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.other-paths-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #a0aec0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Path Options Grid - 2x2 para other paths */
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Path Option Card */
+.path-option-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(228, 157, 57, 0.4);
+  border-radius: 16px;
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+  justify-content: center;
+}
+
+.path-option-card:hover {
+  border: 2px solid rgb(228, 157, 57);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Path Option Icon */
+.path-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  color: #E49D39;
+}
+
+.path-option-svg {
+  width: 40px;
+  height: 40px;
+}
+
+.path-option-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.path-option-description {
+  color: #a0aec0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .recommended-path-content {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .results-screen {
+    padding: 32px 16px;
+    gap: 32px;
+  }
+
+  .results-title {
+    font-size: 28px;
+  }
+
+  .results-subtitle {
+    font-size: 16px;
+  }
+
+  .results-badge-section {
+    padding: 24px;
+  }
+
+  .results-badge-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .results-badge-text {
+    font-size: 24px;
+  }
+
+  .results-badge-description {
+    font-size: 14px;
+  }
+
+  .recommended-path-title {
+    font-size: 18px;
+  }
+
+  .recommended-path-card {
+    padding: 28px 20px;
+  }
+
+  .other-paths-title {
+    font-size: 18px;
+  }
+
+  .paths-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .path-option-card {
+    padding: 28px 20px;
+    min-height: 160px;
+  }
+
+  .path-option-title {
+    font-size: 18px;
+  }
+
+  .path-option-description {
+    font-size: 13px;
+  }
+}
