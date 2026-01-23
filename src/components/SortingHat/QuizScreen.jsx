@@ -10,7 +10,8 @@ export default function QuizScreen({ onComplete, onBack }) {
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    fetch('/api/assessment/beta-1')
+    // fetch('/api/assessment/beta-1')
+      fetch('http://localhost:3001/api/assessment/beta-1')
       .then(res => res.json())
       .then(data => {
         setQuestions(data.questions);
