@@ -1,0 +1,167 @@
+.path-selection-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 5rem);
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.path-selection-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Main Content */
+.path-selection-main-content {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.path-selection-main-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+.path-selection-main-subtitle {
+  color: #a0aec0;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Path Options Grid */
+.path-selection-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Path Option Card */
+.path-option-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(228, 157, 57, 0.4);
+  border-radius: 16px;
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+  justify-content: center;
+}
+
+.path-option-card:hover {
+  border: 2px solid rgb(228, 157, 57);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Path Option Icon */
+.path-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  color: #E49D39;
+}
+
+.path-option-svg {
+  width: 40px;
+  height: 40px;
+}
+
+.path-option-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.path-option-description {
+  color: #a0aec0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Quiz Option Card - Pulsing Glow Effect */
+.path-option-card-quiz {
+  border-color: rgba(228, 157, 57, 0.6);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.path-option-card-quiz:hover {
+  border-color: rgb(228, 157, 57);
+  animation: none;
+  box-shadow: 0 0 30px rgba(228, 157, 57, 0.5), 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.path-option-icon-quiz {
+  color: #E49D39;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(228, 157, 57, 0.2), 0 0 10px rgba(228, 157, 57, 0.1);
+    border-color: rgba(228, 157, 57, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(228, 157, 57, 0.4), 0 0 40px rgba(228, 157, 57, 0.2);
+    border-color: rgba(228, 157, 57, 0.8);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .path-selection-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .path-selection-main-title {
+    font-size: 28px;
+  }
+
+  .path-selection-main-subtitle {
+    font-size: 16px;
+  }
+
+  .path-selection-options {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .path-option-card {
+    padding: 28px 20px;
+    min-height: 160px;
+  }
+
+  .path-option-title {
+    font-size: 18px;
+  }
+
+  .path-option-description {
+    font-size: 13px;
+  }
+}
